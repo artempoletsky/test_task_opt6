@@ -1,0 +1,31 @@
+<template>
+  <div class="flex mb-5">
+    <div class="grow">
+      <h2 class="text-2xl font-bold mb-4">Проверьте штрафы и зарегистрируйтесь в 1 клик</h2>
+      <div class="flex gap-5">
+        <TextInput class="basis-2/3" label="Номер автомобиля" />
+        <TextInput class="basis-1/3" label="Регион" />
+      </div>
+      <TextInput label="Свидетельство о регистрации ТС" />
+      <div class="flex gap-3">
+        <Button>Проверить штрафы
+          <Icon class="ml-1" img="arrow_right" />
+        </Button>
+        <Button type="bordered">
+          <Icon class="mr-1" img="yt_border_blue" />
+          О сервисе
+          <span class="text-sm text-blue-700">({{ videoLen }})</span>
+        </Button>
+      </div>
+      <div class="text-gray-400 text-[13px] mt-2">
+        Нажимая «Проверить штрафы» вы соглашаетесь с политикой обработки персональных данных и принимаете оферту
+      </div>
+    </div>
+    <img alt="Проверьте штрафы и зарегистрируйтесь в 1 клик" src="/pages/index/one_click_register/app_preview.png" />
+  </div>
+</template>
+
+<script setup>
+
+const videoLen = "1 мин. 20 сек";
+</script>

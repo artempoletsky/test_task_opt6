@@ -1,0 +1,71 @@
+<template>
+  <header>
+    <div class="wrapper">
+      <div class="left">
+        <NuxtLink to="/"><img class="logo" alt="Compas logo" src="/logo.png" /></NuxtLink>
+        <nav class="links">
+          <NuxtLink class="link" to="/tariffs">Тарифы</NuxtLink>
+          <NuxtLink class="link" to="/contacts">Контакты</NuxtLink>
+        </nav>
+      </div>
+      <div class="right">
+        <div class="phone">+7 495 118-44-22</div>
+        <NuxtLink class="link" to="/signin">Вход</NuxtLink>
+        <NuxtLink class="link" to="/registration"><Button type="header">Регистрация</Button></NuxtLink>
+      </div>
+    </div>
+  </header>
+</template>
+
+<style scoped>
+header {
+  height: 60px;
+  background: linear-gradient(90deg, #000000 30%, #1C2734 73%);
+  color: #FFFFFF;
+}
+
+.wrapper {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  flex-grow: 1;
+  gap: 5px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.links {
+  display: flex;
+  gap: 5px;
+}
+
+.link {
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.phone {
+  font-weight: bold;
+}
+</style>

@@ -1,0 +1,4 @@
+<template>
+  <PagesIndexOneClickRegister />
+  <PagesIndexServicePros />
+</template>
