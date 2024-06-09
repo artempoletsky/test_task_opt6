@@ -11,7 +11,7 @@
       <div class="right">
         <div class="phone">+7 495 118-44-22</div>
         <NuxtLink class="link" to="/signin">Вход</NuxtLink>
-        <NuxtLink class="link" to="/registration"><Button type="header">Регистрация</Button></NuxtLink>
+        <NuxtLink class="link" to="/registration"><Button look="header">Регистрация</Button></NuxtLink>
       </div>
     </div>
   </header>
@@ -25,7 +25,7 @@ header {
 }
 
 .wrapper {
-  max-width: 1280px;
+  @apply max-w-page;
   padding: 0 20px;
   margin: 0 auto;
   display: flex;

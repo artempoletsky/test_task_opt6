@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config.theme} */
 const TailwindTheme = {
   colors: {
     blue: {
@@ -8,6 +9,7 @@ const TailwindTheme = {
     },
     gray: {
       400: "#8F8F8F",
+      700: "#383838",
     }
   },
   fontFamily: {
@@ -20,13 +22,14 @@ const TailwindTheme = {
     // 0.5: "0.125rem",
     1: "0.25rem",
     // 1.5: "0.375rem",
-    2: "0.5rem",
+    2: "5px",
     // 2.5: "0.625rem",
     3: "16px",
     // 3.5: "0.875rem",
     4: "20px",
     5: "30px",
     10: "98px",
+    page: "1196px",
   },
   fontSize: {
     "2xl": ["41px", "120%"],
@@ -43,18 +46,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [["@nuxtjs/google-fonts", {
     families: {
-      "PT Sans": {
-        wght: [100, 400],
-        ital: [100]
-      },
+      "PT Sans": true,
     }
-  }], "@nuxtjs/tailwindcss"],
+  }], "@nuxtjs/tailwindcss", "vue3-carousel-nuxt"],
   tailwindcss: {
-    // cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
-    // configPath: "tailwind.config.ts",
-    // exposeConfig: {
-    //   level: 2
-    // },
+    editorSupport: true,
+    // cssPath: "~/assets/css/global.css",
     config: {
       corePlugins: {
         // preflight: false,
@@ -62,7 +59,10 @@ export default defineNuxtConfig({
       theme: {
         extend: TailwindTheme,
       },
+      plugins: [
+        // require('@tailwindcss/typography'),
+        // ...
+      ],
     },
-    // viewer: true,
   }
 });

@@ -1,6 +1,6 @@
 <template>
   <div class="mb-10">
-    <h2 class="text-xl font-bold mb-5">Плюсы использования сервиса «Компас» для анализа штрафов</h2>
+    <h2 class="text-xl font-bold mb-5 text-center">Плюсы использования сервиса «Компас» для анализа штрафов</h2>
 
     <div class="flex flex-wrap justify-between gap-[35px]">
       <div v-for="item in items" class="item">

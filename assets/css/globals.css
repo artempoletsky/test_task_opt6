@@ -1,0 +1,34 @@
+
+.carousel__prev svg,
+.carousel__next svg {
+  display: none;
+}
+
+.carousel__prev,
+.carousel__next {
+  width: 40px;
+  height: 80px;
+}
+
+.carousel__prev {
+  background: url("/components/carousel/left.png");
+}
+
+.carousel__next {
+  background: url("/components/carousel/right.png");
+}
+
+.carousel__pagination-button::after {
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  @apply bg-gray-500;
+}
+
+.carousel__pagination-button--active::after {
+  width: 9px;
+  height: 9px;
+  @apply bg-blue-500;
+  margin-top: -1px;
+}
+

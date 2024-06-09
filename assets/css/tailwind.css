@@ -3,3 +3,24 @@
 @tailwind utilities;
 
 @tailwind components;
+
+
+.prose {
+  color: #000;
+  font-size: 18px;
+  line-height: 120%;
+  h1 {
+    @apply text-2xl;
+    margin-bottom: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  h2 {
+    @apply text-2xl text-gray-700;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+}

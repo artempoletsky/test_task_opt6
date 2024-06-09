@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Header from './components/layout/Header.vue';
 // import Footer from './components/layout/Footer.vue';
+
+import '~/assets/css/globals.css'
 </script>
 
 
@@ -16,7 +18,7 @@ import Header from './components/layout/Header.vue';
 <style scoped>
 .wrapper {
   margin: 0 auto;
-  max-width: 1280px;
+  @apply max-w-page;
   padding: 20px 20px;
   width: 100%;
   flex-grow: 1;
@@ -28,9 +30,12 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-weight: normal;
   font-size: 18px;
-  line-height: 23px;
   margin: 0;
   padding: 0;
+}
+
+* {
+  line-height: 120%;
 }
 
 #__nuxt {

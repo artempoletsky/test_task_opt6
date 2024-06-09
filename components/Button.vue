@@ -1,14 +1,18 @@
 <template>
-  <button :class="type">
+  <button :class="resultClass" :type="type">
     <slot />
   </button>
 </template>
 
 
 <script setup lang="ts">
-defineProps<{
-  type?: "default" | "header" | "bordered";
+const props = defineProps<{
+  look?: "default" | "header" | "bordered";
+  type?: "button" | "submit" | "reset";
+  class?: string;
 }>();
+
+const resultClass = `${props.look} ${props.class}`;
 </script>
 
 <style scoped>
