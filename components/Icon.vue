@@ -1,15 +1,31 @@
 <template>
-  <img :class="class" :src="src" />
+  <div :class="class" class="wrapper" :style="{
+    width,
+    height,
+  }">
+    <img :src="src" />
+  </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
   img: "arrow_right" | "yt_border_blue" | "infinity" | "bell" | "shield" | "arrowClock" | "receipt" | "eMap";
   class?: string;
-  size?: "md" | "sm" | "lg" | "xl";
+  size?: "auto" | "md" | "sm" | "lg" | "xl";
 }>();
 
 let src = "";
+const size = props.size || "auto";
+let width = "auto";
+let height = "auto";
+switch (size) {
+  case "md":
+    width = height = "66px";
+    break;
+
+  default:
+    break;
+}
 
 switch (props.img) {
   case "arrow_right": src = "/pages/index/one_click_register/arrow_right.png"; break;
@@ -23,7 +39,12 @@ switch (props.img) {
 }
 </script>
 <style scoped>
-img {
-  display: inline-block;
+.wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+  position: relative;
 }
 </style>

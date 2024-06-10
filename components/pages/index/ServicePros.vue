@@ -4,7 +4,7 @@
 
     <div class="flex flex-wrap justify-between gap-[35px]">
       <div v-for="item in items" class="item">
-        <Icon :img="item.icon" />
+        <Icon size="md" :img="item.icon" />
         <div class="ml-3">
           <div class="text-blue-700 font-bold mb-2">{{ item.title }}</div>
           <p class="text-sm">{{ item.description }}</p>
@@ -67,5 +67,6 @@ const items: Item[] = [
   border: 1px solid #EEEFF1;
   border-radius: 10px;
   @apply px-4;
+  margin-bottom: 15px;
 }
 </style>

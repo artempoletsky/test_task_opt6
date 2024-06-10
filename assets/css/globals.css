@@ -53,3 +53,7 @@ body {
 img {
   vertical-align: middle;
 }
+
+.carousel__pagination {
+  margin: 0;
+}

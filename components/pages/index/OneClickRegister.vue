@@ -13,7 +13,7 @@
           <Icon class="ml-1" img="arrow_right" />
         </Button>
         <Button look="bordered">
-          <Icon class="mr-1" img="yt_border_blue" />
+          <Icon class="mr-1 top-[-1px]" img="yt_border_blue" />
           О сервисе
           <span class="text-sm text-blue-700">({{ videoLen }})</span>
         </Button>

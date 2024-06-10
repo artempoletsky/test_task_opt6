@@ -11,7 +11,7 @@
     <carousel ref="myCarousel" itemsToShow="3">
       <slide v-for="(item, index) in items" :key="index">
         <div class="item flex flex-col">
-          <div class="text-blue-700 text-[31px] font-bold">{{ item.title }}</div>
+          <div class="text-blue-700 text-[31px] font-bold mb-[10px]">{{ item.title }}</div>
           <div class="grow">{{ item.description }}</div>
           <NuxtLink class="w-full" to="/documents/example"><Button class="w-full">Перейти</Button></NuxtLink>
         </div>
@@ -78,5 +78,6 @@ const items: Item[] = [
   border-radius: 10px;
   padding: 25px;
   margin-bottom: 10px;
+  text-align: left;
 }
 </style>
