@@ -8,7 +8,7 @@
       </div>
     </Carousel> -->
 
-    <carousel ref="myCarousel" :itemsToShow="3">
+    <carousel ref="myCarousel" :itemsToShow="itemsToShow">
       <slide v-for="(item, index) in items" :key="index">
         <div class="item flex flex-col">
           <div class="text-blue-700 text-[31px] font-bold mb-[10px]">{{ item.title }}</div>
@@ -30,11 +30,27 @@
 import { ref } from 'vue';
 const myCarousel = ref<any>(null);
 
+let itemsToShow = ref(3);
 
-// // Data can be accessed under data property
-// if (myCarousel.data.currentSlide === 10) {
-//   // Do your magic here
-// }
+onMounted(() => {
+  calculateItemsToShow();
+  // 
+  window.addEventListener("resize", calculateItemsToShow);
+});
+
+function calculateItemsToShow() {
+  // console.dir();
+  const carousel = myCarousel.value;
+
+  const el: HTMLDivElement = carousel.$el;
+  // console.log(el.clientWidth);
+  // console.log(Math.floor(el.clientWidth / 300));
+
+  itemsToShow.value = Math.floor(el.clientWidth / 300);
+  myCarousel.value.restartCarousel();
+}
+
+
 type Item = {
   title: string;
   description: string;
@@ -67,8 +83,6 @@ const items: Item[] = [
 
 <style scoped>
 .item {
-  /* Rectangle 5 */
-
   width: 340px;
   height: 450px;
 

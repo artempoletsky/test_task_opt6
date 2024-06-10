@@ -30,7 +30,7 @@
       </div>
     </form>
     <div class="image_section_lg">
-      <img class="w-[533px] h-[335px]" width="533" height="335" alt="Проверьте штрафы и зарегистрируйтесь в 1 клик"
+      <img class="img-full" alt="Проверьте штрафы и зарегистрируйтесь в 1 клик"
         src="/pages/index/one_click_register/app_preview.png" />
     </div>
   </div>
@@ -88,7 +88,8 @@ const showYoutubePopup = () => {
 }
 
 .form {
-  max-width: 700px;
+  width: 563px;
+  flex-shrink: 0;
 }
 
 .image_section_lg {
@@ -113,6 +114,11 @@ const showYoutubePopup = () => {
 }
 
 @media (max-width: 1130px) {
+  .form {
+    max-width: 700px;
+    width: auto;
+  }
+
   .image_section_lg {
     display: none;
   }
@@ -128,6 +134,10 @@ const showYoutubePopup = () => {
     flex-direction: column;
     max-width: 300px;
     /* margin: 0 auto; */
+  }
+
+  h2 {
+    font-size: 28px;
   }
 }
 </style>
