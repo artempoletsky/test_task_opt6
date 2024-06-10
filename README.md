@@ -1,75 +1,44 @@
-# Nuxt 3 Minimal Starter
+Тестовое задание для ОПТ6
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Требования
 
-## Setup
+Работа должна быть выполнена со следующими критериями:
 
-Make sure to install the dependencies:
+1. Соблюдение перфект пикселя
+2. Наличие семантики
+3. Наличие мобильной адаптации
+4. Все кнопки должны быть кликабельны
+5. В шапке ссылки должны вести на пустые страницы с заголовком
+6. При клике в форме отображать уведомление что данные были отправлены
+7. Ссылки в слайдере должны вести на отдельные страницы
+8. Кнопки должны иметь ховер эффекты
+9. Поля для ввода должны отображать стили при фокусе на них
+10. При клике на логотип должен происходить редирект на главную страницу
+11. Обязательно использование препроцессоров, nuxt 3
+12. При клике на кнопку «О сервисе», открывать модальное окно со ссылкой на любое видео с Ютуба
+13. Если поля формы не заполнены, то запрещать отправку данных и менять цвет бордеров у полей на красный.
 
-```bash
-# npm
-npm install
+## Обзор технологий
 
-# pnpm
-pnpm install
+1. Nuxt, Vue
+2. Tailwind вместе с обычным CSS.
+3. vue3-carousel-nuxt для карусели
+4. zod для валидации формы
 
-# yarn
-yarn install
+## Обзор файлов проекта
 
-# bun
-bun install
-```
+`assets/css/tailwind.css` - подключается самым первым. Содержит стили для типографии.
 
-## Development Server
+`assets/css/globals.css` - подключается последним. Содержит стили для лейаута и кастомные стили для карусели.
 
-Start the development server on `http://localhost:3000`:
+`nuxt.config.ts` - Настройки Nuxt и Tailwind.
 
-```bash
-# npm
-npm run dev
+Все остальные стили scoped в компонентах.
 
-# pnpm
-pnpm run dev
+`lib/form.ts` - Сделал аналог [https://mantine.dev/form/use-form/]. С помошью неё удобно делать валидацию формы.
 
-# yarn
-yarn dev
+## Known issues
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+1. Если экран небольшой (на телефоне) YouTube открывается в новом окне вместо попапа.
+2. Figma почему-то отказывалась экспортировать SVG так что все иконки в PNG.
+3. vue3-carousel странно себя ведет. При ресайзе окна пересчитывается количество элементов которые карусель должна показать. Так вот когда надо показать 1 или 3 слайда всё работает как надо а на двух слайдах пагинация пролистывает на половину слайда вместо 1.
