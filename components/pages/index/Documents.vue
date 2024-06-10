@@ -8,7 +8,7 @@
       </div>
     </Carousel> -->
 
-    <carousel ref="myCarousel" itemsToShow="3">
+    <carousel ref="myCarousel" :itemsToShow="3">
       <slide v-for="(item, index) in items" :key="index">
         <div class="item flex flex-col">
           <div class="text-blue-700 text-[31px] font-bold mb-[10px]">{{ item.title }}</div>

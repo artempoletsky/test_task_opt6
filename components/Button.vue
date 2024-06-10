@@ -27,6 +27,11 @@ button {
   font-size: 18px;
 }
 
+button:hover {
+  box-shadow: 0 0 10px #0584FE;
+  @apply shadow-blue-700;
+}
+
 button.header {
   padding: 8px 17px;
   font-size: 15px;

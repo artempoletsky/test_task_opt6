@@ -1,12 +1,15 @@
 <template>
   <div class="flex mb-10 mt-[59px] gap-6">
-    <form action="#" class="grow">
+    <form @submit="onSubmit" action="#" class="grow">
       <h2 class="text-2xl font-bold mb-4.5">Проверьте штрафы и зарегистрируйтесь в 1 клик</h2>
       <div class="flex gap-5">
-        <TextInput class="grow" label="Номер автомобиля" />
-        <TextInput class="w-[38%]" label="Регион" />
+        <TextInput class="grow" label="Номер автомобиля" v-bind="form.getInputProps('vehicleNumber')"
+          v-on="form.getInputEvents('vehicleNumber')" />
+        <TextInput class="w-[38%]" label="Регион" v-bind="form.getInputProps('region')"
+          v-on="form.getInputEvents('region')" />
       </div>
-      <TextInput label="Свидетельство о регистрации ТС" />
+      <TextInput label="Свидетельство о регистрации ТС" v-bind="form.getInputProps('deed')"
+        v-on="form.getInputEvents('deed')" />
       <div class="flex gap-4">
         <Button type="submit">
           Проверить штрафы
@@ -23,13 +26,43 @@
       </div>
     </form>
     <div class="shrink-0 pr-[28px]">
-      <img  class="w-[533px] h-[335px]" width="533" height="335"
-        alt="Проверьте штрафы и зарегистрируйтесь в 1 клик" src="/pages/index/one_click_register/app_preview.png" />
+      <img class="w-[533px] h-[335px]" width="533" height="335" alt="Проверьте штрафы и зарегистрируйтесь в 1 клик"
+        src="/pages/index/one_click_register/app_preview.png" />
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { useForm } from '~/lib/form';
+import z from "zod";
 
 const videoLen = "1 мин. 20 сек";
+
+type FormType = {
+  vehicleNumber: string;
+  region: string;
+  deed: string;
+};
+
+const zString = z.string().min(1, "Поле обязательно для заполнения");
+const form = useForm<FormType>({
+  initialValues: {
+    vehicleNumber: "",
+    region: "",
+    deed: "",
+  },
+  zod: z.object({
+    vehicleNumber: zString,
+    region: zString,
+    deed: zString,
+  }),
+});
+
+const onSubmit = form.onSubmit((values: FormType) => {
+  console.log(values);
+
+  alert("Данные отправлены!");
+});
+
+
 </script>

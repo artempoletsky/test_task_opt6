@@ -1,16 +1,29 @@
 <template>
   <div :class="class" class="wrapper">
     <label v-if="label">{{ label }}</label>
-    <input />
+    <input :class="{
+      error: !!error,
+    }" :required="required" :name="name" :placeholder="placeholder" @change="onChange" :value="value" />
+    <em v-if="error" class="error">{{ error }}</em>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   label?: string;
   class?: string;
+  error?: string;
+  name?: string;
+  placeholder?: string;
+  "@change"?: (e: Event) => void;
+  value?: string;
+  required?: boolean;
 }>();
+
+const onChange = props['@change'];
+
 </script>
+
 
 <style scoped>
 label {
@@ -33,7 +46,17 @@ input:focus {
   outline: none;
 }
 
+input.error {
+  @apply border-red-500;
+}
+
 .wrapper {
   margin-bottom: 16px;
+}
+
+.error {
+  display: block;
+  font-style: normal;
+  @apply text-xs text-red-700 mt-1;
 }
 </style>
