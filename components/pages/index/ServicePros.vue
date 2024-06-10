@@ -2,7 +2,7 @@
   <div class="mb-10">
     <h2 class="text-xl font-bold mb-5.5 text-center">Плюсы использования сервиса «Компас» для анализа штрафов</h2>
 
-    <div class="flex flex-wrap justify-between gap-[35px]">
+    <div class="flex flex-wrap justify-evenly gap-[35px]">
       <div v-for="item in items" class="item">
         <Icon size="md" :img="item.icon" />
         <div class="ml-3">

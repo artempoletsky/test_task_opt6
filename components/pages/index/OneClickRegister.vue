@@ -1,6 +1,10 @@
 <template>
-  <div class="flex mb-10 mt-[59px] gap-6">
-    <form @submit="onSubmit" action="#" class="grow">
+  <div class="container">
+    <div class="image_section_sm">
+      <img class="img-full" alt="Проверьте штрафы и зарегистрируйтесь в 1 клик"
+        src="/pages/index/one_click_register/app_preview.png" />
+    </div>
+    <form @submit="onSubmit" action="#" class="form">
       <h2 class="text-2xl font-bold mb-4.5">Проверьте штрафы и зарегистрируйтесь в 1 клик</h2>
       <div class="flex gap-5">
         <TextInput class="grow" label="Номер автомобиля" v-bind="form.getInputProps('vehicleNumber')"
@@ -10,7 +14,7 @@
       </div>
       <TextInput label="Свидетельство о регистрации ТС" v-bind="form.getInputProps('deed')"
         v-on="form.getInputEvents('deed')" />
-      <div class="flex gap-4">
+      <div class="buttons">
         <Button type="submit">
           Проверить штрафы
           <Icon class="ml-1" img="arrow_right" />
@@ -25,7 +29,7 @@
         Нажимая «Проверить штрафы» вы соглашаетесь с политикой обработки персональных данных и принимаете оферту
       </div>
     </form>
-    <div class="shrink-0 pr-[28px]">
+    <div class="image_section_lg">
       <img class="w-[533px] h-[335px]" width="533" height="335" alt="Проверьте штрафы и зарегистрируйтесь в 1 клик"
         src="/pages/index/one_click_register/app_preview.png" />
     </div>
@@ -71,3 +75,59 @@ const showYoutubePopup = () => {
 
 
 </script>
+<style scoped>
+.container {
+  @apply mb-10 gap-6;
+  display: flex;
+  margin-top: 60px;
+}
+
+.img-full {
+  width: 100%;
+  height: auto;
+}
+
+.form {
+  max-width: 700px;
+}
+
+.image_section_lg {
+  flex-shrink: 0;
+  padding-right: 28px;
+}
+
+.image_section_sm {
+  margin: 0 auto;
+  @apply mb-3;
+  max-width: 550px;
+}
+
+.buttons {
+  @apply flex gap-4;
+}
+
+@media (min-width: 1130px) {
+  .image_section_sm {
+    display: none;
+  }
+}
+
+@media (max-width: 1130px) {
+  .image_section_lg {
+    display: none;
+  }
+
+  .container {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 535px) {
+  .buttons {
+    flex-direction: column;
+    max-width: 300px;
+    /* margin: 0 auto; */
+  }
+}
+</style>
