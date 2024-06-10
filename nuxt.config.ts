@@ -46,6 +46,11 @@ const TailwindTheme = {
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      viewport: "width=device-width, initial-scale=1, minimum-scale=1",
+    }
+  },
   devtools: { enabled: true },
   modules: [["@nuxtjs/google-fonts", {
     families: {

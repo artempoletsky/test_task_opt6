@@ -19,7 +19,6 @@
 
 <style scoped>
 header {
-  height: 60px;
   background: linear-gradient(90deg, #000000 30%, #1C2734 73%);
   color: #FFFFFF;
 }
@@ -78,9 +77,26 @@ header {
   .wrapper {
     flex-direction: column;
     padding-bottom: 20px;
+    padding-top: 20px;
   }
-  .left, .right, .links {
+
+  .left {
+    height: auto;
+  }
+
+  .left,
+  .right,
+  .links {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    gap: 5px;
+    margin: 15px 0;
+  }
+  .right {
+    gap: 10px;
   }
 
 }
