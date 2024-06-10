@@ -70,6 +70,10 @@ const onSubmit = form.onSubmit((values: FormType) => {
 });
 
 const showYoutubePopup = () => {
+  if (window.innerWidth < 960) {
+    window.open(`https://www.youtube.com/watch?v=${store.ytUrl}`, '_blank')!.focus();
+    return;
+  }
   store.popupContent = "Youtube";
 }
 
