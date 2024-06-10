@@ -16,7 +16,7 @@ defineProps<{
 
 <style scoped>
 .item {
-  @apply text-sm;
+  @apply text-xs;
   position: relative;
   margin-right: 25px;
 }

@@ -12,7 +12,7 @@ const props = defineProps<{
   class?: string;
 }>();
 
-const resultClass = `${props.look} ${props.class}`;
+const resultClass = `${props.look || "default"} ${props.class || ""}`;
 </script>
 
 <style scoped>

@@ -16,7 +16,7 @@ defineProps<{
 label {
   display: block;
   font-size: 12px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 input {

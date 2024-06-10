@@ -24,27 +24,3 @@ import '~/assets/css/globals.css'
   flex-grow: 1;
 }
 </style>
-
-<style>
-body {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: normal;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  line-height: 120%;
-}
-
-#__nuxt {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-img {
-  vertical-align: middle;
-}
-</style>

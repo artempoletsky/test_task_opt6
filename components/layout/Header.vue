@@ -11,7 +11,7 @@
       <div class="right">
         <div class="phone">+7 495 118-44-22</div>
         <NuxtLink class="link" to="/signin">Вход</NuxtLink>
-        <NuxtLink class="link" to="/registration"><Button look="header">Регистрация</Button></NuxtLink>
+        <NuxtLink to="/registration"><Button look="header">Регистрация</Button></NuxtLink>
       </div>
     </div>
   </header>
@@ -42,7 +42,7 @@ header {
 .right {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
 
 .logo {
@@ -51,7 +51,8 @@ header {
 
 .links {
   display: flex;
-  gap: 5px;
+  gap: 30px;
+  margin-left: 20px;
 }
 
 .link {
