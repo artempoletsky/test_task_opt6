@@ -15,7 +15,7 @@
           Проверить штрафы
           <Icon class="ml-1" img="arrow_right" />
         </Button>
-        <Button look="bordered">
+        <Button @click="showYoutubePopup" look="bordered">
           <Icon class="mr-1 top-[-1px]" img="yt_border_blue" />
           О сервисе
           <span class="text-sm text-blue-700">({{ videoLen }})</span>
@@ -35,6 +35,7 @@
 <script setup lang="ts">
 import { useForm } from '~/lib/form';
 import z from "zod";
+import { store } from '~/lib/store';
 
 const videoLen = "1 мин. 20 сек";
 
@@ -63,6 +64,10 @@ const onSubmit = form.onSubmit((values: FormType) => {
 
   alert("Данные отправлены!");
 });
+
+const showYoutubePopup = () => {
+  store.popupContent = "Youtube";
+}
 
 
 </script>

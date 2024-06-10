@@ -2,7 +2,7 @@
   <header>
     <div class="wrapper">
       <div class="left">
-        <NuxtLink to="/"><img class="logo" alt="Compas logo" src="/logo.png" /></NuxtLink>
+        <NuxtLink class="shrink-0" to="/"><img class="logo" alt="Compas logo" src="/logo.png" /></NuxtLink>
         <nav class="links">
           <NuxtLink class="link" to="/tariffs">Тарифы</NuxtLink>
           <NuxtLink class="link" to="/contacts">Контакты</NuxtLink>
@@ -68,5 +68,20 @@ header {
 
 .phone {
   font-weight: bold;
+}
+
+@media (max-width: 750px) {
+  header {
+    height: auto;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .left, .right, .links {
+    flex-direction: column;
+  }
+
 }
 </style>

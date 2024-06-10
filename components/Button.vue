@@ -13,6 +13,7 @@ const props = defineProps<{
 }>();
 
 const resultClass = `${props.look || "default"} ${props.class || ""}`;
+const type = props.type || "button";
 </script>
 
 <style scoped>

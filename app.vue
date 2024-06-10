@@ -12,6 +12,7 @@ import '~/assets/css/globals.css'
   <div class="wrapper">
     <NuxtPage />
   </div>
+  <PopupOverlay></PopupOverlay>
   <!-- <Footer></Footer> -->
 </template>
 

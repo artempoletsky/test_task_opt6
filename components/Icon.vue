@@ -1,5 +1,5 @@
 <template>
-  <div :class="class" class="wrapper" :style="{
+  <div :class="resultClass" class="wrapper" :style="{
     width,
     height,
   }">
@@ -9,10 +9,17 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  img: "arrow_right" | "yt_border_blue" | "infinity" | "bell" | "shield" | "arrowClock" | "receipt" | "eMap";
+  img: "arrow_right" | "yt_border_blue" | "infinity" | "bell" | "shield" | "arrowClock" | "receipt" | "eMap" | "close";
   class?: string;
   size?: "auto" | "md" | "sm" | "lg" | "xl";
+  pointer?: boolean;
 }>();
+
+let resultClass = props.class || "";
+
+if (props.pointer){
+  resultClass += " cursor-pointer";
+}
 
 let src = "";
 const size = props.size || "auto";
@@ -36,6 +43,7 @@ switch (props.img) {
   case "shield": src = "/pages/index/one_click_register/shield.png"; break;
   case "arrowClock": src = "/pages/index/one_click_register/arrow_clock.png"; break;
   case "receipt": src = "/pages/index/one_click_register/receipt.png"; break;
+  case "close": src = "/components/popup/close.png"; break;
 }
 </script>
 <style scoped>
