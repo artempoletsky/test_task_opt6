@@ -37,6 +37,9 @@ onMounted(() => {
   // 
   window.addEventListener("resize", calculateItemsToShow);
 });
+onUnmounted(()=>{
+  window.removeEventListener("resize", calculateItemsToShow)
+});
 
 function calculateItemsToShow() {
   // console.dir();
